@@ -1,0 +1,48 @@
+<mat-card>
+    <mat-form-field> 
+        <h1 >Register </h1>
+          <form [formGroup]='myForm'>
+
+            <mat-form-field appearance="fill">
+                <label>ID</label>
+                <input matInput placeholder="Enter ID" class="form-control" formControlName="pid">
+                <mat-error *ngif="id.touched">
+                
+                    **ID Must be in Digit**
+                </mat-error>
+             </mat-form-field>
+       
+             <mat-form-field appearance="fill">
+                <label>NAME</label>
+                <input matInput placeholder="Enter Your Name" class="form-control" formControlName="name">
+                
+             </mat-form-field>
+             <mat-form-field appearance="fill">
+                <label>Password</label>
+                <input matInput [type]="hide ? 'password' : 'text'" placeholder="ENTER your password" >
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+        
+              <mat-form-field appearance="fill">
+                <label>ADDRESS</label>
+                <textarea   id="address" cols="30" rows="7" class="form-control" fromControlName="address">
+                </textarea>
+                
+             </mat-form-field>
+            
+             <mat-form-field appearance="fill">
+             <label for="history">Medical History: </label>
+                <textarea  id="history" cols="30" rows="10" class="form-control" formControlName="medicalhistory">
+                </textarea>
+            </mat-form-field>
+             <button  type="submit" mat-raised-button color="primary">Submit</button>&nbsp;&nbsp;&nbsp;
+             <button type="reset" mat-raised-button color="primary">Reset</button>
+            
+            
+
+        </form>
+        
+    </mat-form-field>    
+</mat-card>

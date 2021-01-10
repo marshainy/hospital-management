@@ -1,0 +1,23 @@
+
+h1{
+    text-align: center;
+    max-width:fit-content ;
+    background-color:darkcyan;
+    color: white;
+    border-radius: 1rem;
+    
+}
+.patientlog .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+.mat-card{
+    max-width:20%;
+    box-shadow: 2em;
+    background-origin: padding-box;
+    border: 2ex;
+    
+}
+
+  
+
+  

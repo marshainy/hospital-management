@@ -1,0 +1,31 @@
+h1{
+    background-color: darkcyan;
+    text-align: center;
+    color: black;
+    text-shadow: rgb(79, 80, 78);
+}
+.navbar{
+    justify-content: space-between;
+     color:whitesmoke;
+     background-color: rgb(80, 77, 77);
+}
+span{
+    padding-right: 1rem;
+}
+.navbar a{
+    color: rgb(236, 236, 232);
+    border: 1px transparent;
+    border-color: azure;
+    border-radius: 2px;
+}
+.navbar :hover{
+      border-radius: 1px rgb(64, 184, 214);
+      transition-duration: .5;
+      background-color: rgb(107, 117, 206);
+}
+.social-menu{
+    text-align: right;
+    margin-right:2;
+    
+
+}

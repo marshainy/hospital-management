@@ -1,0 +1,29 @@
+.mat-card{
+    
+    box-shadow: 2em;
+    background-origin: padding-box;
+    text-align: center;
+    justify-content: space-between;
+    
+    
+}
+
+h1{
+    text-align: center;
+    max-width:fit-content ;
+    background-color:darkcyan;
+    color: white;
+    border-radius: 1rem;
+    
+}
+.input{
+    display: block;
+    box-shadow: 2;
+    background-origin: padding-box;
+    border-radius: 1rem;
+    border-color: whitesmoke;   
+}
+.mat-hint{
+    text-align: end;
+}
+

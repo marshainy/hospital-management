@@ -1,0 +1,22 @@
+<mat-card>
+    <h1>Booking For Apointment</h1><br><br>
+<form>
+    <mat-form-field appearance="fill">
+        
+    <input matInput placeholder="Enter Your Name" class="form-control" formControlName="name" autocomplete="off">
+        
+     </mat-form-field><br>
+    <mat-form-field appearance="fill">
+        
+        <input matInput [matDatepicker]="bookingdate" placeholder="Apointment Date">
+        <mat-datepicker-toggle matSuffix [for]="bookingdate"> </mat-datepicker-toggle>
+        <mat-datepicker #bookingdate></mat-datepicker>
+    </mat-form-field><br>
+        
+        <input [ngxTimepicker]="picker" placeholder="Apointment Time">
+        <ngx-material-timepicker #picker></ngx-material-timepicker>
+    
+</form><br><br>
+<button  type="submit" mat-raised-button color="primary">Book Now</button>
+
+</mat-card>

@@ -1,0 +1,25 @@
+h1{
+    text-align: center;
+    background-color: crimson;
+    border-radius: 1em;
+    box-shadow: inset;
+    border-width: 2em;
+    border-color: crimson;
+}
+
+p{
+    max-width: 20%;
+    height: 40%;
+    background-color: goldenrod;
+    border-radius: 2rem;
+    max-height: 40%;
+    
+}
+h3{max-width: 20%;
+    background-color: lightcoral;
+
+}
+div.booking{
+    text-align: justify;
+    align-content:space-between ;
+}
