@@ -1,0 +1,49 @@
+<mat-card>
+    
+    <h1 >Register </h1>
+    <div>
+     
+     <form (ngSubmit)="onSubmit()">
+ 
+        <div class="form-group">
+           
+       Doctor ID : <input matInput placeholder="Enter ID" class="form-group" id="doctorID" name="doctorID"  [(ngModel)]="doctor.doctorID">
+        </div>
+        <div class="form-group">
+           
+         Dept ID : <input matInput placeholder="Enter  Dept ID" class="form-group" id="deptId" name="deptId"  [(ngModel)]="doctor.deptId">
+          </div>
+        <div class="form-group">
+           
+           Name :<input matInput placeholder="Enter Your Name" class="form-group" id="fullName" name="fullName"  [(ngModel)]="doctor.fullName">
+        </div>
+     <div class="form-group">
+        
+        Password :<input matInput [type]="hide ? 'password' : 'text'" placeholder="ENTER your password" class="form-group" id="Pass" name="Pass"  [(ngModel)]="doctor.pass">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+     </div>
+     <div class="form-group">
+       
+       Email :<input matInput placeholder="Enter Email Id" class="form-group" id="email" name="email"  [(ngModel)]="doctor.email">
+    </div>
+     <div class="form-group">
+       
+       Qualification :<input matInput placeholder="Enter your Qualification" class="form-group" id="qualification" name="qualification"  [(ngModel)]="doctor.qualification">
+    </div>
+     
+       
+        
+     
+    
+  
+     <button  type="submit" mat-raised-button color="primary" class="btn btn-success" >Submit</button>&nbsp;&nbsp;&nbsp;
+     <button type="reset" mat-raised-button color="primary">Reset</button>   
+ 
+ </form>
+ 
+    </div>
+      
+ </mat-card>
+ 

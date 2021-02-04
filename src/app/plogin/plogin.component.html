@@ -1,26 +1,26 @@
 <div class="patientlog">
 <mat-card>
-    <mat-form-field> 
-      <form> 
-        <h1 >Sign In</h1>
-        <mat-form-field appearance="fill">
-          <mat-label>ID</mat-label>
-          <input matInput placeholder="Enter ID" class="form-control">
-        </mat-form-field><br>
-        <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" placeholder="ENTER your password" >
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-          </mat-form-field><br>
-          <button mat-raised-button color="primary" [routerLink]="['/appointment']">Login</button>&nbsp;&nbsp;&nbsp;
-            <button mat-raised-button color="primary" [routerLink]="['/register']">Register</button>
-      </form>
-        
-       
+  <h1>Patient SignIn</h1>
+  <div class="example-container">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Patient Email Id</mat-label>
+      <input matInput type="email" class="example-right-align" [(ngModel)]="pat">
+    
     </mat-form-field>
-       
+  </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'"[(ngModel)]="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button  type="submit" mat-raised-button color="primary" (click)="loginPat()" class="btn btn-success">LogIn</button>&nbsp;&nbsp;&nbsp;
+    <button type="reset" mat-raised-button color="primary" routerLink="/register">Register</button>   
+  
+    
+  
     
 </mat-card>
 </div>

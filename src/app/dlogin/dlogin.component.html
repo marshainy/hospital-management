@@ -1,28 +1,27 @@
-<div class="adminlog">
-    <mat-card>
-        <mat-form-field> 
-          <form> 
-            <h1 >LOG In</h1>
-            <mat-form-field appearance="fill">
-              <mat-label>Doctor  ID</mat-label>
-              <input matInput placeholder="Enter ID" class="form-control">
-            </mat-form-field><br>
-            <mat-form-field appearance="fill">
-                <mat-label>Password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" placeholder="ENTER your password" >
-                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                </button>
-              </mat-form-field><br><br><br>
-              <button mat-raised-button color="primary" [routerLink]="['/appointment']">Login</button>&nbsp;&nbsp;&nbsp;
-              <button mat-raised-button color="primary" [routerLink]="['/doctorreg']">Register</button>
-                
-          </form>
-            
-           
-        </mat-form-field>
-           
-        
-    </mat-card>
+<div class="doclog">
+  <mat-card>
+    <h1>Doctor SignIn</h1>
+    <div class="example-container">
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Doctor Email</mat-label>
+        <input matInput type="email" class="example-right-align" [(ngModel)]="doc">
+      
+      </mat-form-field>
     </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'"  [(ngModel)]="password" >
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button  type="submit" mat-raised-button color="primary"  class="btn btn-success" (click)="loginDoc()">LogIn</button>&nbsp;&nbsp;&nbsp;
+      <button type="reset" mat-raised-button color="primary" routerLink="/doctorreg">Register</button>   
     
+      
+    
+      
+  </mat-card>
+  </div>
+  

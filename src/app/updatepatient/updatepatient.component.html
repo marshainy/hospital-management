@@ -1,0 +1,53 @@
+<h2 align="center">Update Patient Details</h2>
+<div class="container">
+    <div class="card">
+      <mat-card>
+         <div>
+         
+            <form (ngSubmit)="onSubmit()">
+   
+               <div class="form-group">
+                  <label>ID</label>
+                  <input matInput placeholder="Enter ID" class="form-group" id="id" name="id"  [(ngModel)]="patient.id">
+               </div>
+               <div class="form-group">
+                  <label>NAME</label>
+                  <input matInput placeholder="Enter Your Name" class="form-group" id="name" name="name"  [(ngModel)]="patient.name">
+               </div>
+            <div class="form-group">
+               <label>Password</label>
+               <input matInput [type]="hide ? 'password' : 'text'" placeholder="ENTER your password" class="form-group" id="password" name="password"  [(ngModel)]="patient.password">
+               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+               </button>
+            </div>
+            
+               <div class="form=-group">
+                  <label>ADDRESS</label>
+                  <textarea   id="address" cols="30" rows="7"class="form-group" id="address" name="address"   [(ngModel)]="patient.address">
+                  </textarea>
+                  
+               </div>
+               
+            
+               <div class="form-group">
+                  <label for="history">Medical History: </label>
+                  <textarea  id="history" cols="30" rows="10" class="form-group" id="medicalhistory" name="medicalhistory"  [(ngModel)]="patient.medicalhistory">
+                  </textarea>
+               </div>
+           
+         
+            <button  type="submit" mat-raised-button color="primary" class="btn btn-success" >Submit</button>&nbsp;&nbsp;&nbsp;
+            
+   
+       </form>
+   
+           </div>
+      </mat-card>  
+
+        
+       
+       
+    </div>
+</div>
+

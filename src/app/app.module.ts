@@ -27,17 +27,39 @@ import { DloginComponent } from './dlogin/dlogin.component';
 import { AloginComponent } from './alogin/alogin.component';
 import { DocregistrationComponent } from './docregistration/docregistration.component';
 import { AdminconsoleComponent } from './adminconsole/adminconsole.component';
+import { PatientmanagementComponent } from './patientmanagement/patientmanagement.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UpdatepatientComponent } from './updatepatient/updatepatient.component';
+import { DataTablesModule } from "angular-datatables";
+import { CommonModule } from '@angular/common';
+import { DoctormanagementComponent } from './doctormanagement/doctormanagement.component';
+import { UpdatedoctorComponent } from './updatedoctor/updatedoctor.component';
+import { DoctorConsoleComponent } from './doctor-console/doctor-console.component';
+import { ApointmentManagementComponent } from './apointment-management/apointment-management.component';
+import { UpdateApointmentComponent } from './update-apointment/update-apointment.component';
+import { NewguardGuard } from './loginauth/newguard.guard';
+import { StdguardGuard } from './loginauth/stdguard.guard';
+
 
 const appRouters:Routes=[
   { path:'home',component:HomeComponent},
   { path:'patient',component:PloginComponent},
   { path:'doctor',component:DloginComponent},
   { path:'admin',component:AloginComponent},
+  { path:'',redirectTo:"patients",pathMatch:"full"},
   { path:'register',component:RegisterComponent},
   { path:'appointment',component:AppointmentComponent},
   { path:'booking' ,component:BookingComponent},
   { path:'doctorreg',component:DocregistrationComponent},
-  { path:'adminconsole',component:AdminconsoleComponent}
+  { path:'adminconsole',component:AdminconsoleComponent 
+},
+  { path:'update/:id',component:UpdatepatientComponent},
+  { path:'patientmanagement',component:PatientmanagementComponent},
+  { path:'doctormanagement',component:DoctormanagementComponent},
+  { path:'dupdate/:doctorID',component:UpdatedoctorComponent},
+  { path:'docConsole',component:DoctorConsoleComponent, canActivate: [StdguardGuard]},
+  { path:'apoiManagement',component:ApointmentManagementComponent},
+  { path:'apoint/:appointmentID',component:UpdateApointmentComponent}
   
 ]
 @NgModule({
@@ -52,7 +74,15 @@ const appRouters:Routes=[
     DloginComponent,
     AloginComponent,
     DocregistrationComponent,
-    AdminconsoleComponent
+    AdminconsoleComponent,
+    PatientmanagementComponent,
+    UpdatepatientComponent,
+    DoctormanagementComponent,
+    UpdatedoctorComponent,
+    DoctorConsoleComponent,
+    ApointmentManagementComponent,
+    UpdateApointmentComponent,
+    
     
   ],
   imports: [
@@ -66,10 +96,15 @@ const appRouters:Routes=[
     MatIconModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FormsModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    DataTablesModule,
+    CommonModule,
+  
     NgxMaterialTimepickerModule,
+    
    RouterModule.forRoot( appRouters)
   ],
   providers: [],

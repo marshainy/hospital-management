@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="card">
+        <ul>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/register" routerLinkActie="active">Add Patient</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/patientmanagement" routerLinkActie="active">Patient List</a>
+            </li>
+
+        </ul>
+        
+
+        
+       
+        <div class="panel-body">
+            <table id="datatable-example" class="table table-striped" width="100%" cellspacing="0">
+                <thead>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>PASSWORD</th>
+                    <th>EMAIL</th>
+                    <th>ADDRESS</th>
+                    <th>MEDICAL HISTORY</th>
+                </thead>
+                
+                    <tr *ngFor="let pat of patient" >
+                       <td>{{pat.id}}</td>
+                       <td>{{pat.name}}</td>
+                       <td>{{pat.password}}</td>
+                       <td>{{pat.email}}</td>
+                       <td>{{pat.address}}</td>
+                       <td>{{pat.medicalhistory}}</td>
+                        <td><button  (click)="deletePatient(pat.id)" class="btn btn-danger">Delete</button>
+                        <button  (click)=" updatePatient(pat.id)" class="btn btn-success" style="margin-left: 10px">Update</button></td>
+                    </tr>
+            
+            </table>
+        </div>
+    </div>
+</div>

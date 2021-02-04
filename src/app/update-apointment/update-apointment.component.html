@@ -1,0 +1,30 @@
+<div>
+    <mat-card>
+        <h1>Update For Apointment</h1><br><br>         
+    <form (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            
+        <input matInput placeholder="Enter Your Name" class="form-control" formControlName="patientName" id="patientName" name="patientName"autocomplete="off" [(ngModel)]="apointment.patientName">
+            
+         </mat-form-field><br>
+         <mat-form-field appearance="fill">
+            
+            <input matInput placeholder="Enter Your Id" class="form-control" formControlName="appointmentID" autocomplete="off" id="appointmentID" name="appointmentID" [(ngModel)]="apointment.appointmentID">
+                
+             </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            
+            <input matInput [matDatepicker]="bookingdate" placeholder="ApointmentDate" id="appointDate" name="appointDate" [(ngModel)]="apointment.appointDate">
+            <mat-datepicker-toggle matSuffix [for]="bookingdate"> </mat-datepicker-toggle>
+            <mat-datepicker #bookingdate></mat-datepicker>
+        </mat-form-field><br>
+            
+            <input [ngxTimepicker]="picker" placeholder="Enter AppointTime" id="appointTime"  name="appointTime" [(ngModel)]="apointment.appointTime">
+            <ngx-material-timepicker #picker></ngx-material-timepicker>
+        
+    </form><br><br>
+    <button  type="submit" mat-raised-button color="primary">Book Now</button>
+    
+    </mat-card>
+    
+</div>
